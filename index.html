@@ -3,29 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио графического дизайнера</title>
-    <link rel=""stylesheet type="text/css" href="style.css"
+    <title>Портфолио</title>
+    <link rel=""stylesheet type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Шапка -->
+
     <header data-aos="fade-down">
         <h1>Графический Дизайнер</h1>
     </header>
 
-    <!-- Герой-секция -->
-    <section class="hero" data-aos="fade-up">
-        <div>
-            <h2>Привет, я [Ваше Имя]</h2>
-            <p>Я создаю уникальные визуальные решения для брендов, которые хотят выделяться.</p>
-        </div>
-    </section>
-
-    <!-- Галерея -->
     <section class="gallery">
         <h2 data-aos="fade-up">Мои работы</h2>
-        <!-- Фильтры -->
+
         <div class="gallery-filters" data-aos="fade-up">
             <button class="active" data-filter="all">Все</button>
             <button data-filter="logo">Логотипы</button>
@@ -33,7 +24,7 @@
             <button data-filter="web">Веб-дизайн</button>
             <button data-filter="print">Печатная продукция</button>
         </div>
-        <!-- Галерея -->
+
         <div class="gallery-grid">
             <div class="gallery-item" data-category="logo" data-aos="fade-up">
                 <img src="https://placehold.co/600x400?text=Логотип+1" alt="Логотип 1">
@@ -62,7 +53,7 @@
         </div>
     </section>
 
-    <!-- Футер -->
+
     <footer data-aos="fade-up">
         <p>Свяжитесь со мной: <a href="mailto:designer@example.com">designer@example.com</a></p>
         <div class="social-links">
@@ -72,29 +63,25 @@
         </div>
     </footer>
 
-    <!-- Скрипты -->
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        // Инициализация AOS
+
         AOS.init({
             duration: 1000,
             once: true,
         });
 
-        // Фильтры галереи
         const filters = document.querySelectorAll('.gallery-filters button');
         const galleryItems = document.querySelectorAll('.gallery-item');
 
         filters.forEach(filter => {
             filter.addEventListener('click', () => {
-                // Убираем активный класс у всех кнопок
                 filters.forEach(f => f.classList.remove('active'));
-                // Добавляем активный класс к выбранной кнопке
                 filter.classList.add('active');
 
                 const category = filter.getAttribute('data-filter');
 
-                // Фильтрация галереи
                 galleryItems.forEach(item => {
                     if (category === 'all' || item.getAttribute('data-category') === category) {
                         item.style.display = 'block';
